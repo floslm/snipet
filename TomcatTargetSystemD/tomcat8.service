@@ -1,14 +1,14 @@
 [Unit]
-Description=Apache Tomcat Web Application Container
+Description=t8018
 After=network.target
 
 [Service]
 Type=forking
 
-Environment=CATALINA_HOME="/opt/apache-tomcat-8.0.18"
+Environment=CATALINA_HOME=/opt/apache-tomcat-8.0.18
 
-ExecStart=$CATALINA_HOME/bin/startup.sh
-ExecStop=$CATALINA_HOME/shutdown.sh
+ExecStart=/opt/apache-tomcat-8.0.18/bin/startup.sh
+ExecStop=/opt/apache-tomcat-8.0.18/shutdown.sh
 
 User=root
 Group=root
