@@ -1,0 +1,21 @@
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment=CATALINA_HOME="/opt/apache-tomcat-8.0.18"
+
+ExecStart=$CATALINA_HOME/bin/startup.sh
+ExecStop=$CATALINA_HOME/shutdown.sh
+
+User=root
+Group=root
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
